@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "lets-learn-chinese",
+    "scheme": "lets-learn-chinese",
     "slug": "lets-learn-chinese",
     "version": "1.0.0",
     "orientation": "portrait",
