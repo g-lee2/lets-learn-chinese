@@ -1,10 +1,27 @@
-import { Stack } from 'expo-router'
+import { View, TouchableOpacity, Text } from 'react-native';
 
 const RootLayout = () => {
   return (
-    <Stack>
-      <Stack.Screen name="index" options={{ headerShown: false}} />
-    </Stack>
+    <View>
+      <TouchableOpacity>
+        <Text>HSK 1</Text>
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <Text>HSK 2</Text>
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <Text>HSK 3</Text>
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <Text>HSK 4</Text>
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <Text>HSK 5</Text>
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <Text>HSK 6</Text>
+      </TouchableOpacity>
+    </View>
   )
 }
 
