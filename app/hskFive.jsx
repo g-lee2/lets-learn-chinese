@@ -1,10 +1,11 @@
 import { View, Text } from 'react-native';
-import React from 'react';
+import VocabItem from '../components/VocabItem';
+import data from '../assets/data/hsk-level-5.json';
 
 const hskFive = () => {
   return (
     <View>
-      <Text>hskFive</Text>
+      <VocabItem data={data} />
     </View>
   )
 }
