@@ -1,6 +1,6 @@
 import { View, Text, Touchable, TouchableOpacity, FlatList } from 'react-native';
 
-const VocabItem = () => {
+const VocabItem = ({ data }) => {
   return (
     <FlatList 
       data={data} 
