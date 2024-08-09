@@ -1,11 +1,10 @@
 import { View, Text, Touchable, TouchableOpacity, FlatList } from 'react-native';
+import { FlashList } from '@shopify/flash-list';
 
 const VocabItem = ({ data }) => {
   return (
-    <FlatList 
+    <FlashList 
       data={data} 
-      numColumns={5}
-      keyExtractor={(item) => item.id}
       renderItem={({ item }) => (
         <TouchableOpacity>
           <Text>
@@ -13,6 +12,9 @@ const VocabItem = ({ data }) => {
           </Text>
         </TouchableOpacity>
       )}
+      numColumns={5}
+      keyExtractor={(item) => item.id}
+      estimatedItemSize={200}
     />
   )
 }
