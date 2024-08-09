@@ -4,7 +4,7 @@ import data from '../assets/data/hsk-level-1.json';
 
 const hskOne = () => {
   return (
-    <View>
+    <View className="flex-1">
       <VocabItem data={data} />
     </View>
   )
