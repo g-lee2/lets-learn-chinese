@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { Svg, Path } from 'react-native-svg';
+import { Svg, Path, Line } from 'react-native-svg';
 
 const WritingBoard = () => {
   const [paths, setPaths] = useState([]);
@@ -38,6 +38,24 @@ const WritingBoard = () => {
           strokeWidth={3}
           strokeLinejoin="round"
           strokeLinecap="round"
+        />
+        <Line
+          x1="50%"
+          y1="0"
+          x2="50%"
+          y2="100%"
+          stroke="gray"
+          strokeWidth="2"
+          strokeDasharray="5, 5"
+        />
+        <Line
+          x1="0"
+          y1="50%"
+          x2="100%"
+          y2="50%"
+          stroke="gray"
+          strokeWidth="2"
+          strokeDasharray="5, 5"
         />
       </Svg>
       <TouchableOpacity onPress={handleClearButtonClick}>
