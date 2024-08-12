@@ -17,7 +17,7 @@ const VocabDetails = () => {
           <Text key={translation}>{translation}</Text>
         );
       })}
-      <WritingBoard />
+      <WritingBoard character={vocabHanzi} />
     </View>
   )
 }
