@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { Svg, Path, Line } from 'react-native-svg';
+import { Svg, Path, Line, Text as SvgText } from 'react-native-svg';
 
-const WritingBoard = () => {
+const WritingBoard = ({character}) => {
   const [paths, setPaths] = useState([]);
   const [currentPath, setCurrentPath] = useState([]);
   const [isClearButtonClicked, setIsClearButtonClicked] = useState(false);
@@ -31,14 +31,6 @@ const WritingBoard = () => {
   return (
     <View onTouchMove={onTouchMove} onTouchEnd={onTouchEnd} className='w-100% h-1/2 border-black border-2'>
       <Svg>
-        <Path 
-          d={[...paths.flat(), ...currentPath].join(' ')}
-          stroke={isClearButtonClicked ? 'transparent' : 'black'}
-          fill="transparent"
-          strokeWidth={3}
-          strokeLinejoin="round"
-          strokeLinecap="round"
-        />
         <Line
           x1="50%"
           y1="0"
@@ -57,6 +49,25 @@ const WritingBoard = () => {
           strokeWidth="2"
           strokeDasharray="5, 5"
         />
+        <Path 
+          d={[...paths.flat(), ...currentPath].join(' ')}
+          stroke={isClearButtonClicked ? 'transparent' : 'black'}
+          fill="transparent"
+          strokeWidth={3}
+          strokeLinejoin="round"
+          strokeLinecap="round"
+        />
+        <SvgText
+          x="50%"
+          y="50%"
+          fontSize="130"
+          fill="gray"
+          textAnchor="middle"
+          alignmentBaseline="central"
+          opacity="0.3"
+        >
+          {character}
+        </SvgText>
       </Svg>
       <TouchableOpacity onPress={handleClearButtonClick}>
         <Text>
