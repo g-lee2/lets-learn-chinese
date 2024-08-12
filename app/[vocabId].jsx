@@ -1,6 +1,7 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 import { useLocalSearchParams } from 'expo-router';
+import WritingBoard from '../components/WritingBoard';
 
 const VocabDetails = () => {
   const {vocabId, vocabHanzi, vocabPinyin, vocabTranslations} = useLocalSearchParams();
@@ -16,6 +17,7 @@ const VocabDetails = () => {
           <Text key={translation}>{translation}</Text>
         );
       })}
+      <WritingBoard />
     </View>
   )
 }
