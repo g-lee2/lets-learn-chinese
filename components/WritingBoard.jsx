@@ -32,6 +32,16 @@ const WritingBoard = ({character}) => {
     <View onTouchMove={onTouchMove} onTouchEnd={onTouchEnd} className='w-100% h-1/2 border-black border-2'>
       <Svg>
         <Line
+          x1="25%"
+          y1="0"
+          x2="25%"
+          y2="100%"
+          stroke="gray"
+          strokeWidth="2"
+          strokeDasharray="5, 5"
+          opacity="0.3"
+        />
+        <Line
           x1="50%"
           y1="0"
           x2="50%"
@@ -41,6 +51,26 @@ const WritingBoard = ({character}) => {
           strokeDasharray="5, 5"
         />
         <Line
+          x1="75%"
+          y1="0"
+          x2="75%"
+          y2="100%"
+          stroke="gray"
+          strokeWidth="2"
+          strokeDasharray="5, 5"
+          opacity="0.3"
+        />
+        <Line
+          x1="0"
+          y1="25%"
+          x2="100%"
+          y2="25%"
+          stroke="gray"
+          strokeWidth="2"
+          strokeDasharray="5, 5"
+          opacity="0.3"
+        />
+        <Line
           x1="0"
           y1="50%"
           x2="100%"
@@ -48,6 +78,16 @@ const WritingBoard = ({character}) => {
           stroke="gray"
           strokeWidth="2"
           strokeDasharray="5, 5"
+        />
+        <Line
+          x1="0"
+          y1="75%"
+          x2="100%"
+          y2="75%"
+          stroke="gray"
+          strokeWidth="2"
+          strokeDasharray="5, 5"
+          opacity="0.3"
         />
         <Path 
           d={[...paths.flat(), ...currentPath].join(' ')}
