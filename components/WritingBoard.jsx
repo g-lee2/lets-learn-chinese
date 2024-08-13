@@ -12,10 +12,10 @@ const WritingBoard = ({character}) => {
       setPaths(prevPaths => [...prevPaths, currentPath]);
     }
     setCurrentPath([]);
-    setIsClearButtonClicked(false);
   }
 
   const onTouchMove = (event) => {
+    setIsClearButtonClicked(false);
     // Create a copy of the current path to avoid mutating state directly
     const newPath = [...currentPath];
 
@@ -44,87 +44,89 @@ const WritingBoard = ({character}) => {
   }
 
   return (
-    <View onTouchMove={onTouchMove} onTouchEnd={onTouchEnd} className='w-screen h-64 border-black border-2'>
-      <Svg>
-        <Line
-          x1="25%"
-          y1="0"
-          x2="25%"
-          y2="100%"
-          stroke="gray"
-          strokeWidth="2"
-          strokeDasharray="5, 5"
-          opacity="0.3"
-        />
-        <Line
-          x1="50%"
-          y1="0"
-          x2="50%"
-          y2="100%"
-          stroke="gray"
-          strokeWidth="2"
-          strokeDasharray="5, 5"
-        />
-        <Line
-          x1="75%"
-          y1="0"
-          x2="75%"
-          y2="100%"
-          stroke="gray"
-          strokeWidth="2"
-          strokeDasharray="5, 5"
-          opacity="0.3"
-        />
-        <Line
-          x1="0"
-          y1="25%"
-          x2="100%"
-          y2="25%"
-          stroke="gray"
-          strokeWidth="2"
-          strokeDasharray="5, 5"
-          opacity="0.3"
-        />
-        <Line
-          x1="0"
-          y1="50%"
-          x2="100%"
-          y2="50%"
-          stroke="gray"
-          strokeWidth="2"
-          strokeDasharray="5, 5"
-        />
-        <Line
-          x1="0"
-          y1="75%"
-          x2="100%"
-          y2="75%"
-          stroke="gray"
-          strokeWidth="2"
-          strokeDasharray="5, 5"
-          opacity="0.3"
-        />
-        <SvgText
-          x="50%"
-          y="50%"
-          fontSize={character.length > 2 ? '90' : '150'}
-          fill="gray"
-          textAnchor="middle"
-          alignmentBaseline="central"
-          opacity="0.3"
-        >
-          {character}
-        </SvgText>
-        <Path 
-          // Combine all paths and the current path into a single string that defines the entire SVG path, d attribute expects a string
-          d={[...paths.flat(), ...currentPath].join(' ')}
-          stroke={isClearButtonClicked ? 'transparent' : 'black'}
-          fill="transparent"
-          strokeWidth={3}
-          strokeLinejoin="round"
-          strokeLinecap="round"
-        />
-      </Svg>
+    <View>
+      <View onTouchMove={onTouchMove} onTouchEnd={onTouchEnd} className='w-screen h-64 border-black border-2'>
+        <Svg>
+          <Line
+            x1="25%"
+            y1="0"
+            x2="25%"
+            y2="100%"
+            stroke="gray"
+            strokeWidth="2"
+            strokeDasharray="5, 5"
+            opacity="0.3"
+          />
+          <Line
+            x1="50%"
+            y1="0"
+            x2="50%"
+            y2="100%"
+            stroke="gray"
+            strokeWidth="2"
+            strokeDasharray="5, 5"
+          />
+          <Line
+            x1="75%"
+            y1="0"
+            x2="75%"
+            y2="100%"
+            stroke="gray"
+            strokeWidth="2"
+            strokeDasharray="5, 5"
+            opacity="0.3"
+          />
+          <Line
+            x1="0"
+            y1="25%"
+            x2="100%"
+            y2="25%"
+            stroke="gray"
+            strokeWidth="2"
+            strokeDasharray="5, 5"
+            opacity="0.3"
+          />
+          <Line
+            x1="0"
+            y1="50%"
+            x2="100%"
+            y2="50%"
+            stroke="gray"
+            strokeWidth="2"
+            strokeDasharray="5, 5"
+          />
+          <Line
+            x1="0"
+            y1="75%"
+            x2="100%"
+            y2="75%"
+            stroke="gray"
+            strokeWidth="2"
+            strokeDasharray="5, 5"
+            opacity="0.3"
+          />
+          <SvgText
+            x="50%"
+            y="50%"
+            fontSize={character.length > 2 ? '90' : '150'}
+            fill="gray"
+            textAnchor="middle"
+            alignmentBaseline="central"
+            opacity="0.3"
+          >
+            {character}
+          </SvgText>
+          <Path 
+            // Combine all paths and the current path into a single string that defines the entire SVG path, d attribute expects a string
+            d={[...paths.flat(), ...currentPath].join(' ')}
+            stroke={isClearButtonClicked ? 'transparent' : 'black'}
+            fill="transparent"
+            strokeWidth={3}
+            strokeLinejoin="round"
+            strokeLinecap="round"
+          />
+        </Svg>
+      </View>
       <TouchableOpacity onPress={handleClearButtonClick}>
         <Text>
           Clear
