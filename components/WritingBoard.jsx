@@ -43,7 +43,6 @@ const WritingBoard = ({character}) => {
     setPaths(prevPaths => prevPaths.slice(0, -1));
   }
 
-  console.log(paths);
   return (
     <View onTouchMove={onTouchMove} onTouchEnd={onTouchEnd} className='w-screen h-64 border-black border-2'>
       <Svg>
@@ -140,4 +139,4 @@ const WritingBoard = ({character}) => {
   )
 }
 
-export default WritingBoard
+export default WritingBoard;
