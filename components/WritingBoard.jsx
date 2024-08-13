@@ -108,7 +108,7 @@ const WritingBoard = ({character}) => {
         <SvgText
           x="50%"
           y="50%"
-          fontSize="130"
+          fontSize={character.length > 2 ? '90' : '150'}
           fill="gray"
           textAnchor="middle"
           alignmentBaseline="central"
