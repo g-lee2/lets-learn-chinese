@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native';
 import React from 'react';
-import { useLocalSearchParams } from 'expo-router';
+import { useLocalSearchParams, Stack } from 'expo-router';
 import WritingBoard from '../components/WritingBoard';
 
 const VocabDetails = () => {
@@ -9,6 +9,11 @@ const VocabDetails = () => {
   
   return (
     <View>
+      <Stack.Screen
+        options={{
+          title: vocabHanzi,
+        }}
+      />
       <Text>{vocabId}</Text>
       <Text>{vocabHanzi}</Text>
       <Text>{vocabPinyin}</Text>
@@ -22,4 +27,4 @@ const VocabDetails = () => {
   )
 }
 
-export default VocabDetails
+export default VocabDetails;
