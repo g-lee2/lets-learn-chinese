@@ -16,11 +16,20 @@ const WritingBoard = ({character}) => {
   }
 
   const onTouchMove = (event) => {
+    // Create a copy of the current path to avoid mutating state directly
     const newPath = [...currentPath];
+
+    // Get the X and Y coordinates of the touch event
     const locationX = event.nativeEvent.locationX;
     const locationY = event.nativeEvent.locationY;
+
+    // If it's the first point, start the path with 'M' (essentially "moves" the "pen" to a specific position on the canvas. It prepares to start a new drawing from that point). Otherwise, just add the coordinates.
     const newPoint = `${newPath.length === 0 ? 'M' : ''}${locationX.toFixed(0)},${locationY.toFixed(0)}`;
+
+    // Add the new point to the path array
     newPath.push(newPoint);
+
+    // Update the state with the new path, which will trigger a re-render
     setCurrentPath(newPath);
   }
 
@@ -108,6 +117,7 @@ const WritingBoard = ({character}) => {
           {character}
         </SvgText>
         <Path 
+          // Combine all paths and the current path into a single string that defines the entire SVG path, d attribute expects a string
           d={[...paths.flat(), ...currentPath].join(' ')}
           stroke={isClearButtonClicked ? 'transparent' : 'black'}
           fill="transparent"
@@ -121,7 +131,7 @@ const WritingBoard = ({character}) => {
           Clear
         </Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => handleUndoButtonClick()}>
+      <TouchableOpacity onPress={handleUndoButtonClick}>
         <Text>
           Undo
         </Text>
