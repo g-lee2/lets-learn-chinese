@@ -29,7 +29,7 @@ const WritingBoard = ({character}) => {
   }
 
   return (
-    <View onTouchMove={onTouchMove} onTouchEnd={onTouchEnd} className='w-100% h-1/2 border-black border-2'>
+    <View onTouchMove={onTouchMove} onTouchEnd={onTouchEnd} className='w-screen h-64 border-black border-2'>
       <Svg>
         <Line
           x1="25%"
@@ -89,14 +89,6 @@ const WritingBoard = ({character}) => {
           strokeDasharray="5, 5"
           opacity="0.3"
         />
-        <Path 
-          d={[...paths.flat(), ...currentPath].join(' ')}
-          stroke={isClearButtonClicked ? 'transparent' : 'black'}
-          fill="transparent"
-          strokeWidth={3}
-          strokeLinejoin="round"
-          strokeLinecap="round"
-        />
         <SvgText
           x="50%"
           y="50%"
@@ -108,6 +100,14 @@ const WritingBoard = ({character}) => {
         >
           {character}
         </SvgText>
+        <Path 
+          d={[...paths.flat(), ...currentPath].join(' ')}
+          stroke={isClearButtonClicked ? 'transparent' : 'black'}
+          fill="transparent"
+          strokeWidth={3}
+          strokeLinejoin="round"
+          strokeLinecap="round"
+        />
       </Svg>
       <TouchableOpacity onPress={handleClearButtonClick}>
         <Text>
