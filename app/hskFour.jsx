@@ -1,10 +1,16 @@
 import { View, Text } from 'react-native';
 import VocabItem from '../components/VocabItem';
 import data from '../assets/data/hsk-level-4.json';
+import { Stack } from "expo-router";
 
 const hskFour = () => {
   return (
     <View className="flex-1">
+      <Stack.Screen
+        options={{
+          title: 'HSK 4',
+        }}
+      />
       <VocabItem data={data} />
     </View>
   )

@@ -1,27 +1,27 @@
 import { View, TouchableOpacity, Text } from 'react-native';
-import { useNavigation } from 'expo-router';
+import { useRouter } from 'expo-router';
 
 const RootLayout = () => {
-  const navigation = useNavigation();
+  const router = useRouter();
   
   return (
     <View>
-      <TouchableOpacity onPress={() => navigation.navigate('hskOne')}>
+      <TouchableOpacity onPress={() => router.push('hskOne')}>
         <Text>HSK 1</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('hskTwo')}>
+      <TouchableOpacity onPress={() => router.push('hskTwo')}>
         <Text>HSK 2</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('hskThree')}>
+      <TouchableOpacity onPress={() => router.push('hskThree')}>
         <Text>HSK 3</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('hskFour')}>
+      <TouchableOpacity onPress={() => router.push('hskFour')}>
         <Text>HSK 4</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('hskFive')}>
+      <TouchableOpacity onPress={() => router.push('hskFive')}>
         <Text>HSK 5</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('hskSix')}>
+      <TouchableOpacity onPress={() => router.push('hskSix')}>
         <Text>HSK 6</Text>
       </TouchableOpacity>
     </View>
