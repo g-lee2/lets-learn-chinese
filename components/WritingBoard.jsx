@@ -31,13 +31,7 @@ const WritingBoard = ({character}) => {
   }
 
   const handleUndoButtonClick = () => {
-    setPaths(prevPaths => {
-      if (prevPaths.length === 0) return prevPaths;
-      const newPaths = prevPaths.slice(0, -1);
-      console.log("Original paths:", prevPaths);
-      console.log("Paths after undo:", newPaths);
-      return [...newPaths]; // Ensures a new reference
-    });
+    setPaths(prevPaths => prevPaths.slice(0, -1));
   }
 
   console.log(paths);
