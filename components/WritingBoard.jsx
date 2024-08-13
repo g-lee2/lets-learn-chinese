@@ -8,7 +8,9 @@ const WritingBoard = ({character}) => {
   const [isClearButtonClicked, setIsClearButtonClicked] = useState(false);
 
   const onTouchEnd = () => {
-    setPaths(prevPaths => [...prevPaths, currentPath]);
+    if (currentPath.length > 0) {
+      setPaths(prevPaths => [...prevPaths, currentPath]);
+    }
     setCurrentPath([]);
     setIsClearButtonClicked(false);
   }
@@ -28,6 +30,17 @@ const WritingBoard = ({character}) => {
     setIsClearButtonClicked(true);
   }
 
+  const handleUndoButtonClick = () => {
+    setPaths(prevPaths => {
+      if (prevPaths.length === 0) return prevPaths;
+      const newPaths = prevPaths.slice(0, -1);
+      console.log("Original paths:", prevPaths);
+      console.log("Paths after undo:", newPaths);
+      return [...newPaths]; // Ensures a new reference
+    });
+  }
+
+  console.log(paths);
   return (
     <View onTouchMove={onTouchMove} onTouchEnd={onTouchEnd} className='w-screen h-64 border-black border-2'>
       <Svg>
@@ -112,6 +125,11 @@ const WritingBoard = ({character}) => {
       <TouchableOpacity onPress={handleClearButtonClick}>
         <Text>
           Clear
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => handleUndoButtonClick()}>
+        <Text>
+          Undo
         </Text>
       </TouchableOpacity>
     </View>
