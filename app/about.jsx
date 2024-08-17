@@ -6,20 +6,30 @@ const about = () => {
   };
 
   const handlePressCedricHartland = () => {
-    Linking.openURL('http://cedric.hartland.free.fr');
+    Linking.openURL('http://cedric.hartland.free.fr/index.php?page=hsk&lang=en');
   }
 
   const handlePressDavidPeterson = () => {
-    Linking.openURL('http://www.davidpetersson.com');
+    Linking.openURL('http://www.davidpetersson.com/hsk-the-complete-hanban-lists/');
   } 
 
   const handlePressCedict = () => {
     Linking.openURL('http://www.mdbg.net');
   }
 
+  const handlePressCCLicense = () => {
+    Linking.openURL('https://creativecommons.org/licenses/by-nc/4.0/');
+  }
+
   return (
     <View>
-      <Text>This app was made possible by</Text>
+      <Text>This app utilizes data derived from gigacool GitHub repository licensed under the MIT License.</Text>
+      <Text>The data includes entries from the CEDICT dictionary, which is provided by Cedric Hartland and David Peterson and is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.</Text>
+      <TouchableOpacity onPress={handlePressCCLicense}>
+        <Text className='underline text-cyan-600'>
+          View the Creative Commons License
+        </Text>
+      </TouchableOpacity>
       <TouchableOpacity onPress={handlePressGigacool}>
         <Text className='underline text-cyan-600'>
           gigacool
