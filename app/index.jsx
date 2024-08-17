@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const RootLayout = () => {
   const router = useRouter();
-  const [openDate, setOpenDate] = useState('');
+  const [currentDate, setCurrentDate] = useState('');
   const [streakData, setStreakData] = useState([]);
   const [shouldSaveNewStreak, setShouldSaveNewStreak] = useState(false);
 
@@ -16,26 +16,26 @@ const RootLayout = () => {
   };
 
   useEffect(() => {
-    const currentDate = new Date().toLocaleDateString(undefined, options);
-    setOpenDate(currentDate);
+    const todayDate = new Date().toLocaleDateString(undefined, options);
+    setCurrentDate(todayDate);
     getData();
   }, []);
 
   useEffect(() => {
-    if (streakData.length > 0 && openDate) {
+    if (streakData.length > 0 && currentDate) {
       const lastStreakDate = streakData[streakData.length - 1];
       const yesterdayDate = new Date();
       yesterdayDate.setDate(yesterdayDate.getDate() - 1);
 
       if (lastStreakDate === yesterdayDate.toLocaleDateString(undefined, options)) {
-        setStreakData(prevData => [...prevData, openDate]);
+        setStreakData(prevData => [...prevData, currentDate]);
         setShouldSaveNewStreak(true);
-      } else if (lastStreakDate !== openDate) {
-        setStreakData([openDate]); 
+      } else if (lastStreakDate !== currentDate) {
+        setStreakData([currentDate]); 
         setShouldSaveNewStreak(true);
       }
     }
-  }, [streakData, openDate]);
+  }, [streakData, currentDate]);
 
   useEffect(() => {
     if (shouldSaveNewStreak) {
