@@ -84,6 +84,9 @@ const RootLayout = () => {
       <TouchableOpacity onPress={() => router.push('hskSix')}>
         <Text>HSK 6</Text>
       </TouchableOpacity>
+      <TouchableOpacity onPress={() => router.push('about')}>
+        <Text>About</Text>
+      </TouchableOpacity>
     </View>
   )
 }
