@@ -22,7 +22,7 @@ const RootLayout = () => {
   }, []);
 
   useEffect(() => {
-    if (streakData.length > 0 && currentDate) {
+    if (streakData && currentDate) {
       const lastStreakDate = streakData[streakData.length - 1];
       const yesterdayDate = new Date();
       yesterdayDate.setDate(yesterdayDate.getDate() - 1);
