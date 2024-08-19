@@ -2,6 +2,19 @@
 
 #### By Grace Lee
 
+## Table of Contents
+
+- [Description of Application](#description-of-application)
+- [Technologies Used](#technologies-used)
+- [Prerequisites](#prerequisites)
+- [To run the app on your own device](#to-run-the-app-on-your-own-device)
+- [Running the App on a Simulator/Emulator](#running-the-app-on-a-simulatoremulator)
+- [For iOS (using Xcode)](#for-ios-using-xcode)
+- [For Android (using Android Studio)](#for-android-using-android-studio)
+- [Setup/Installation Requirements](#setupinstallation-requirements)
+- [Credit](#credit)
+- [Contributing](#contributing)
+
 #### Description of Application
 
 This is a educational app designed to help users practice and memorize Chinese characters. The app provides an interactive interface for selecting HSK levels, tracing characters, and testing memory retention.
@@ -16,9 +29,9 @@ This is a educational app designed to help users practice and memorize Chinese c
 - _FlashList_
 - _React Native SVG_
 
-### Prerequisites
+## Prerequisites
 
-#### Before you start, make sure you have the following installed on your machine:
+Before you start, make sure you have the following installed on your machine:
 
 -Node.js (with npm): Download and install [Node.js](https://nodejs.org/)
 
@@ -28,7 +41,7 @@ This is a educational app designed to help users practice and memorize Chinese c
 npm install -g expo-cli
 ```
 
-#### To run the app on your own device
+### To run the app on your own device
 
 Install the Expo Go App:
 
@@ -41,11 +54,11 @@ Scan the QR Code:
 -Use the app’s built-in QR code scanner to scan the QR code displayed in your browser after running npx expo start.
 -This will open your app on your device for testing.
 
-#### Running the App on a Simulator/Emulator
+### Running the App on a Simulator/Emulator
 
 If you prefer to run the app on a simulator or emulator, follow the instructions below:
 
-**For iOS (using Xcode)**
+### For iOS (using Xcode)
 
 > **Note**: Xcode is only available on macOS, so you'll need an Apple product (Mac) to run the iOS Simulator.
 
@@ -70,7 +83,7 @@ Set Up iOS Simulator:
 
 -In the Expo Developer Tools, click on Run on iOS Simulator to open the app on your iOS simulator.
 
-**For Android (using Android Studio)**
+### For Android (using Android Studio)
 
 Download and Install Android Studio:
 
@@ -93,27 +106,27 @@ Run the App on Android Emulator:
 
 ## Setup/Installation Requirements
 
-- Clone this repository to your desktop:
+Clone this repository to your desktop:
 
 ```console
 git clone https://github.com/g-lee2/lets-learn-chinese.git
 ```
 
-- Navigate to the project directory:
+Navigate to the project directory:
 
 ```console
 cd lets-learn-chinese
 ```
 
-- Install all dependencies:
+Install all dependencies:
 
 ```console
 npm install
 ```
 
-- Start the application:
+Start the application:
 
-To run on Expo Go App:
+**To run on Expo Go App**
 
 ```console
 npx expo start
@@ -121,13 +134,13 @@ npx expo start
 
 Open app on your device and scan the QR code in your browser or console.
 
-To run on iOS simulator:
+**To run on iOS simulator**
 
 ```console
 npx expo start i
 ```
 
-To run on Android Emulator:
+**To run on Android Emulator**
 
 ```console
 npx expo start a
