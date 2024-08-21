@@ -9,9 +9,9 @@
 - [Prerequisites](#prerequisites)
 - [To run the app on your own device](#to-run-the-app-on-your-own-device)
 - [Running the App on a Simulator/Emulator](#running-the-app-on-a-simulatoremulator)
-- [For iOS (using Xcode)](#for-ios-using-xcode)
-- [For Android (using Android Studio)](#for-android-using-android-studio)
-- [Setup/Installation Requirements](#setupinstallation-requirements)
+- [For iOS (using Xcode) Installation/Setup](#for-ios-using-xcode)
+- [For Android (using Android Studio) Installation/Setup](#for-android-using-android-studio)
+- [General Setup/Installation Requirements](#setupinstallation-requirements)
 - [Credit](#credit)
 - [Contributing](#contributing)
 
