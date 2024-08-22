@@ -1,4 +1,4 @@
-import { View, TouchableOpacity, Text } from 'react-native';
+import { View, TouchableOpacity, Text, ScrollView, SafeAreaView } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -64,50 +64,52 @@ const RootLayout = () => {
   };
 
   return (
-    <View>
-      <View className="p-8 h-1/6 bg-customGreen rounded-lg shadow-md mx-4 my-8">
-        <Text className='text-white'>{streakData?.length} </Text>
-        <Text className='text-white'>
-          day streak
-        </Text>
+    <ScrollView>
+      <View className='mb-16'>
+        <View className="p-8 h-1/6 bg-customGreen rounded-lg shadow-md mx-5 my-8">
+          <Text className='text-white'>{streakData?.length} </Text>
+          <Text className='text-white'>
+            day streak
+          </Text>
+        </View>
+        <View className="p-6 bg-white rounded-lg shadow-md mx-5 my-2">
+          <TouchableOpacity onPress={() => router.push('hskOne')}>
+            <Text>Learn</Text>
+            <Text>HSK 1</Text>
+          </TouchableOpacity>
+        </View>
+        <View className='p-6 bg-white rounded-lg shadow-md mx-5 my-2'>
+          <TouchableOpacity onPress={() => router.push('hskTwo')}>
+            <Text>Learn</Text>
+            <Text>HSK 2</Text>
+          </TouchableOpacity>
+        </View>
+        <View className='p-6 bg-white rounded-lg shadow-md mx-5 my-2'>
+          <TouchableOpacity onPress={() => router.push('hskThree')}>
+            <Text>Learn</Text>
+            <Text>HSK 3</Text>
+          </TouchableOpacity>
+        </View>
+        <View className='p-6 bg-white rounded-lg shadow-md mx-5 my-2'>
+          <TouchableOpacity onPress={() => router.push('hskFour')}>
+            <Text>Learn</Text>
+            <Text>HSK 4</Text>
+          </TouchableOpacity>
+        </View>
+        <View className='p-6 bg-white rounded-lg shadow-md mx-5 my-2'>
+          <TouchableOpacity onPress={() => router.push('hskFive')}>
+            <Text>Learn</Text>
+            <Text>HSK 5</Text>
+          </TouchableOpacity>
+        </View>
+        <View className='p-6 bg-white rounded-lg shadow-md mx-5 my-2'>
+          <TouchableOpacity onPress={() => router.push('hskSix')}>
+            <Text>Learn</Text>
+            <Text>HSK 6</Text>
+          </TouchableOpacity>
+        </View>
       </View>
-      <View className="p-6 bg-white rounded-lg shadow-md mx-4 my-2">
-        <TouchableOpacity onPress={() => router.push('hskOne')}>
-          <Text>Learn</Text>
-          <Text>HSK 1</Text>
-        </TouchableOpacity>
-      </View>
-      <View className='p-6 bg-white rounded-lg shadow-md mx-4 my-2'>
-        <TouchableOpacity onPress={() => router.push('hskTwo')}>
-          <Text>Learn</Text>
-          <Text>HSK 2</Text>
-        </TouchableOpacity>
-      </View>
-      <View className='p-6 bg-white rounded-lg shadow-md mx-4 my-2'>
-        <TouchableOpacity onPress={() => router.push('hskThree')}>
-          <Text>Learn</Text>
-          <Text>HSK 3</Text>
-        </TouchableOpacity>
-      </View>
-      <View className='p-6 bg-white rounded-lg shadow-md mx-4 my-2'>
-        <TouchableOpacity onPress={() => router.push('hskFour')}>
-          <Text>Learn</Text>
-          <Text>HSK 4</Text>
-        </TouchableOpacity>
-      </View>
-      <View className='p-6 bg-white rounded-lg shadow-md mx-4 my-2'>
-        <TouchableOpacity onPress={() => router.push('hskFive')}>
-          <Text>Learn</Text>
-          <Text>HSK 5</Text>
-        </TouchableOpacity>
-      </View>
-      <View className='p-6 bg-white rounded-lg shadow-md mx-4 my-2'>
-        <TouchableOpacity onPress={() => router.push('hskSix')}>
-          <Text>Learn</Text>
-          <Text>HSK 6</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+    </ScrollView>
   )
 }
 
