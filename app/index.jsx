@@ -67,7 +67,7 @@ const RootLayout = () => {
   };
 
   return (
-    <ScrollView className='bg-white'>
+    <ScrollView >
       <View className='mb-16'>
         <View className="p-8 h-1/6 bg-customGreen rounded-2xl mx-5 my-6">
           <View className='flex-row justify-between items-center'>

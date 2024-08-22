@@ -5,7 +5,7 @@ import { Stack } from "expo-router";
 
 const hskOne = () => {
   return (
-    <View className="flex-1 bg-white p-3">
+    <View className="flex-1 p-3">
       <Stack.Screen
         options={{
           title: 'HSK 1',
