@@ -2,6 +2,7 @@ import { View, TouchableOpacity, Text, ScrollView, SafeAreaView } from 'react-na
 import { useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { SimpleLineIcons, FontAwesome5 } from '@expo/vector-icons';
 
 const RootLayout = () => {
   const router = useRouter();
@@ -67,45 +68,112 @@ const RootLayout = () => {
     <ScrollView>
       <View className='mb-16'>
         <View className="p-8 h-1/6 bg-customGreen rounded-lg shadow-md mx-5 my-8">
-          <Text className='text-white'>{streakData?.length} </Text>
-          <Text className='text-white'>
-            day streak
-          </Text>
+          <View className='flex-row justify-between items-center'>
+            <View className='flex-col'>
+              <Text className='text-white'>{streakData?.length} </Text>
+              <Text className='text-white'>
+                day streak
+              </Text>
+            </View>
+            <View className='w-20 h-20 bg-customWhite rounded-full justify-center items-center'>
+              <FontAwesome5 name="fire-alt" size={48} color="white" />
+            </View>
+          </View>
         </View>
         <View className="p-6 bg-white rounded-lg shadow-md mx-5 my-2">
           <TouchableOpacity onPress={() => router.push('hskOne')}>
-            <Text>Learn</Text>
-            <Text>HSK 1</Text>
+            <View className='flex-row justify-between items-center'>
+              <View className='flex-row items-center space-x-4'>
+                <View className='p-2 bg-customGreen rounded-lg'>
+                  <SimpleLineIcons name="book-open" size={24} color="white"/>
+                </View>
+                <View className='flex-col'>
+                  <Text>Learn</Text>
+                  <Text>HSK 1</Text>
+                </View>
+              </View>
+              <Text>{'>'}</Text>
+            </View>
           </TouchableOpacity>
         </View>
         <View className='p-6 bg-white rounded-lg shadow-md mx-5 my-2'>
           <TouchableOpacity onPress={() => router.push('hskTwo')}>
-            <Text>Learn</Text>
-            <Text>HSK 2</Text>
+          <View className='flex-row justify-between items-center'>
+              <View className='flex-row items-center space-x-4'>
+                <View className='p-2 bg-customGreen rounded-lg'>
+                  <SimpleLineIcons name="book-open" size={24} color="white"/>
+                </View>
+                <View className='flex-col'>
+                  <Text>Learn</Text>
+                  <Text>HSK 2</Text>
+                </View>
+              </View>
+              <Text>{'>'}</Text>
+            </View>
           </TouchableOpacity>
         </View>
         <View className='p-6 bg-white rounded-lg shadow-md mx-5 my-2'>
           <TouchableOpacity onPress={() => router.push('hskThree')}>
-            <Text>Learn</Text>
-            <Text>HSK 3</Text>
+            <View className='flex-row justify-between items-center'>
+              <View className='flex-row items-center space-x-4'>
+                <View className='p-2 bg-customGreen rounded-lg'>
+                  <SimpleLineIcons name="book-open" size={24} color="white"/>
+                </View>
+                <View className='flex-col'>
+                  <Text>Learn</Text>
+                  <Text>HSK 3</Text>
+                </View>
+              </View>
+              <Text>{'>'}</Text>
+            </View>
           </TouchableOpacity>
         </View>
         <View className='p-6 bg-white rounded-lg shadow-md mx-5 my-2'>
           <TouchableOpacity onPress={() => router.push('hskFour')}>
-            <Text>Learn</Text>
-            <Text>HSK 4</Text>
+            <View className='flex-row justify-between items-center'>
+              <View className='flex-row items-center space-x-4'>
+                <View className='p-2 bg-customGreen rounded-lg'>
+                  <SimpleLineIcons name="book-open" size={24} color="white"/>
+                </View>
+                <View className='flex-col'>
+                  <Text>Learn</Text>
+                  <Text>HSK 4</Text>
+                </View>
+              </View>
+              <Text>{'>'}</Text>
+            </View>
           </TouchableOpacity>
         </View>
         <View className='p-6 bg-white rounded-lg shadow-md mx-5 my-2'>
           <TouchableOpacity onPress={() => router.push('hskFive')}>
-            <Text>Learn</Text>
-            <Text>HSK 5</Text>
+            <View className='flex-row justify-between items-center'>
+              <View className='flex-row items-center space-x-4'>
+                <View className='p-2 bg-customGreen rounded-lg'>
+                  <SimpleLineIcons name="book-open" size={24} color="white"/>
+                </View>
+                <View className='flex-col'>
+                  <Text>Learn</Text>
+                  <Text>HSK 5</Text>
+                </View>
+              </View>
+              <Text>{'>'}</Text>
+            </View>
           </TouchableOpacity>
         </View>
         <View className='p-6 bg-white rounded-lg shadow-md mx-5 my-2'>
           <TouchableOpacity onPress={() => router.push('hskSix')}>
-            <Text>Learn</Text>
-            <Text>HSK 6</Text>
+            <View className='flex-row justify-between items-center'>
+              <View className='flex-row items-center space-x-4'>
+                <View className='p-2 bg-customGreen rounded-lg'>
+                  <SimpleLineIcons name="book-open" size={24} color="white"/>
+                </View>
+                <View className='flex-col'>
+                  <Text>Learn</Text>
+                  <Text>HSK 6</Text>
+                </View>
+              </View>
+              <Text>{'>'}</Text>
+            </View>
           </TouchableOpacity>
         </View>
       </View>
