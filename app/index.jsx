@@ -10,6 +10,8 @@ const RootLayout = () => {
   const [streakData, setStreakData] = useState([]);
   const [shouldSaveNewStreak, setShouldSaveNewStreak] = useState(false);
 
+  console.log(streakData);
+
   const options = {
     year: 'numeric',
     month: 'long',
@@ -67,7 +69,7 @@ const RootLayout = () => {
   return (
     <ScrollView className='bg-white'>
       <View className='mb-16'>
-        <View className="p-8 h-1/6 bg-customGreen rounded-2xl shadow-xl mx-5 my-6">
+        <View className="p-8 h-1/6 bg-customGreen rounded-2xl mx-5 my-6">
           <View className='flex-row justify-between items-center'>
             <View className='flex-col items-center'>
               <Text className='text-white text-6xl'>{streakData?.length} </Text>
@@ -81,7 +83,7 @@ const RootLayout = () => {
           </View>
         </View>
         <Text className='mx-6 text-lg font-bold'>HSK Levels</Text>
-        <View className="p-4 bg-white rounded-xl shadow-lg mx-5 my-2">
+        <View className="p-4 bg-white rounded-xl mx-5 my-2" style={{ elevation: 14, shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.2, shadowRadius: 4 }}>
           <TouchableOpacity onPress={() => router.push('hskOne')}>
             <View className='flex-row justify-between items-center'>
               <View className='flex-row items-center space-x-4'>
@@ -97,7 +99,7 @@ const RootLayout = () => {
             </View>
           </TouchableOpacity>
         </View>
-        <View className='p-4 bg-white rounded-xl shadow-lg mx-5 my-2'>
+        <View className='p-4 bg-white rounded-xl mx-5 my-2' style={{ elevation: 14, shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.2, shadowRadius: 4 }}>
           <TouchableOpacity onPress={() => router.push('hskTwo')}>
           <View className='flex-row justify-between items-center'>
               <View className='flex-row items-center space-x-4'>
@@ -113,7 +115,7 @@ const RootLayout = () => {
             </View>
           </TouchableOpacity>
         </View>
-        <View className='p-4 bg-white rounded-xl shadow-lg mx-5 my-2'>
+        <View className='p-4 bg-white rounded-xl mx-5 my-2' style={{ elevation: 14, shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.2, shadowRadius: 4 }}>
           <TouchableOpacity onPress={() => router.push('hskThree')}>
             <View className='flex-row justify-between items-center'>
               <View className='flex-row items-center space-x-4'>
@@ -129,7 +131,7 @@ const RootLayout = () => {
             </View>
           </TouchableOpacity>
         </View>
-        <View className='p-4 bg-white rounded-xl shadow-lg mx-5 my-2'>
+        <View className='p-4 bg-white rounded-xl mx-5 my-2' style={{ elevation: 14, shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.2, shadowRadius: 4 }}>
           <TouchableOpacity onPress={() => router.push('hskFour')}>
             <View className='flex-row justify-between items-center'>
               <View className='flex-row items-center space-x-4'>
@@ -145,7 +147,7 @@ const RootLayout = () => {
             </View>
           </TouchableOpacity>
         </View>
-        <View className='p-4 bg-white rounded-xl shadow-lg mx-5 my-2'>
+        <View className='p-4 bg-white rounded-xl mx-5 my-2' style={{ elevation: 14, shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.2, shadowRadius: 4 }}>
           <TouchableOpacity onPress={() => router.push('hskFive')}>
             <View className='flex-row justify-between items-center'>
               <View className='flex-row items-center space-x-4'>
@@ -161,7 +163,7 @@ const RootLayout = () => {
             </View>
           </TouchableOpacity>
         </View>
-        <View className='p-4 bg-white rounded-xl shadow-lg mx-5 my-2'>
+        <View className='p-4 bg-white rounded-xl mx-5 my-2' style={{ elevation: 14, shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.2, shadowRadius: 4 }}>
           <TouchableOpacity onPress={() => router.push('hskSix')}>
             <View className='flex-row justify-between items-center'>
               <View className='flex-row items-center space-x-4'>
