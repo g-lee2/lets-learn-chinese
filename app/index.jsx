@@ -19,14 +19,35 @@ const RootLayout = () => {
   };
 
   useEffect(() => {
-    const todayDate = new Date().toLocaleDateString(undefined, options);
-    setCurrentDate(todayDate);
-    getData();
+    const fetchDataAndInitializeStreak = async () => {
+      const todayDate = new Date().toLocaleDateString(undefined, options);
+      setCurrentDate(todayDate);
+
+      try {
+        const jsonValue = await AsyncStorage.getItem('streak');
+        const parsedJsonValue = jsonValue != null ? JSON.parse(jsonValue) : [];
+        setStreakData(parsedJsonValue);
+
+        if (parsedJsonValue.length === 0) {
+          setStreakData([todayDate]);
+          setShouldSaveNewStreak(true);
+        }
+      } catch (e) {
+        console.log(`can't find streak in storage`);
+      }
+    };
+
+    fetchDataAndInitializeStreak();
   }, []);
 
   useEffect(() => {
-    if (streakData && currentDate) {
+    if (streakData && streakData.length > 0 && currentDate) {
       const lastStreakDate = streakData[streakData.length - 1];
+
+      if (lastStreakDate === currentDate) {
+        return;
+      }
+
       const yesterdayDate = new Date();
       yesterdayDate.setDate(yesterdayDate.getDate() - 1);
 
@@ -54,16 +75,6 @@ const RootLayout = () => {
       console.log(`can't save new date`);
     }
     setShouldSaveNewStreak(false);
-  };
-
-  const getData = async () => {
-    try {
-      const jsonValue = await AsyncStorage.getItem('streak');
-      const parsedJsonValue = jsonValue != null ? JSON.parse(jsonValue) : [];
-      setStreakData(parsedJsonValue);
-    } catch (e) {
-      console.log(`can't find streak in storage`);
-    }
   };
 
   return (
