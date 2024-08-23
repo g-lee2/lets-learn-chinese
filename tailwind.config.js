@@ -5,10 +5,10 @@ module.exports = {
     extend: {
       colors: {
         customGreen: '#4DC591',
+        customPastelGreen: '#DBF3E9',
         customWhite: 'rgba(255, 255, 255, 0.18)',
       }
     },
   },
   plugins: [],
 }
-
