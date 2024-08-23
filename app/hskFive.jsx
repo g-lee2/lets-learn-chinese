@@ -9,6 +9,10 @@ const hskFive = () => {
       <Stack.Screen
         options={{
           title: 'HSK 5',
+          headerTintColor: '#4DC591',
+          headerTitleStyle: {
+            color: 'black',
+          },
         }}
       />
       <VocabItem data={data} />

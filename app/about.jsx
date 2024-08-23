@@ -28,6 +28,10 @@ const about = () => {
         <Stack.Screen
           options={{
             title: 'About',
+            headerTintColor: '#4DC591',
+            headerTitleStyle: {
+              color: 'black',
+            },
           }}
         />
         <View>

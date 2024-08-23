@@ -16,6 +16,10 @@ const VocabDetails = () => {
       <Stack.Screen
         options={{
           title: hideHanzi ? vocabId : vocabHanzi,
+          headerTintColor: '#4DC591',
+          headerTitleStyle: {
+            color: 'black',
+          },
         }}
       />
       <View className='flex justify-center items-center mb-4'>
