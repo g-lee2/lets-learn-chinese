@@ -45,7 +45,7 @@ const WritingBoard = ({character}) => {
 
   return (
     <View className='flex justify-center items-center'>
-      <View onTouchMove={onTouchMove} onTouchEnd={onTouchEnd} className='w-11/12 h-64 border-2 rounded-2xl'>
+      <View onTouchMove={onTouchMove} onTouchEnd={onTouchEnd} className='w-11/12 h-64 border-2 border-customGreen rounded-2xl'>
         <Svg>
           <Line
             x1="25%"
@@ -130,12 +130,12 @@ const WritingBoard = ({character}) => {
         </Svg>
       </View>
       <View className='flex-row justify-between items-center m-4 w-11/12'>
-        <TouchableOpacity onPress={handleClearButtonClick} className='bg-black w-5/12 h-12 items-center justify-center rounded-lg'>
+        <TouchableOpacity onPress={handleClearButtonClick} className='bg-black w-[47%] h-12 items-center justify-center rounded-lg'>
           <Text className='text-white p-2'>
             Clear
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={handleUndoButtonClick} className='bg-customGreen w-5/12 h-12 items-center justify-center rounded-lg'>
+        <TouchableOpacity onPress={handleUndoButtonClick} className='bg-customGreen w-[47%] h-12 items-center justify-center rounded-lg'>
           <Text className='text-white p-2'>
             Undo
           </Text>
