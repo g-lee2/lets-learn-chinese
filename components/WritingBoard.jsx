@@ -44,8 +44,8 @@ const WritingBoard = ({character}) => {
   }
 
   return (
-    <View>
-      <View onTouchMove={onTouchMove} onTouchEnd={onTouchEnd} className='w-screen h-64 border-black border-2'>
+    <View className='flex justify-center items-center'>
+      <View onTouchMove={onTouchMove} onTouchEnd={onTouchEnd} className='w-11/12 h-64 border-2 border-customGreen rounded-2xl'>
         <Svg>
           <Line
             x1="25%"
@@ -65,6 +65,7 @@ const WritingBoard = ({character}) => {
             stroke="gray"
             strokeWidth="2"
             strokeDasharray="5, 5"
+            opacity="0.3"
           />
           <Line
             x1="75%"
@@ -94,6 +95,7 @@ const WritingBoard = ({character}) => {
             stroke="gray"
             strokeWidth="2"
             strokeDasharray="5, 5"
+            opacity="0.3"
           />
           <Line
             x1="0"
@@ -127,16 +129,18 @@ const WritingBoard = ({character}) => {
           />
         </Svg>
       </View>
-      <TouchableOpacity onPress={handleClearButtonClick}>
-        <Text>
-          Clear
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={handleUndoButtonClick}>
-        <Text>
-          Undo
-        </Text>
-      </TouchableOpacity>
+      <View className='flex-row justify-between items-center m-4 w-11/12'>
+        <TouchableOpacity onPress={handleClearButtonClick} className='bg-black w-[47%] h-12 items-center justify-center rounded-lg'>
+          <Text className='text-white p-2'>
+            Clear
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={handleUndoButtonClick} className='bg-customGreen w-[47%] h-12 items-center justify-center rounded-lg'>
+          <Text className='text-white p-2'>
+            Undo
+          </Text>
+        </TouchableOpacity>
+      </View>
     </View>
   )
 }

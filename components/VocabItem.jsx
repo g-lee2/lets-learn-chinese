@@ -1,4 +1,4 @@
-import { View, Text, Touchable, TouchableOpacity, FlatList } from 'react-native';
+import { Text, Pressable } from 'react-native';
 import { FlashList } from '@shopify/flash-list';
 import { useRouter } from 'expo-router';
 
@@ -9,7 +9,24 @@ const VocabItem = ({ data }) => {
     <FlashList 
       data={data} 
       renderItem={({ item }) => (
-        <TouchableOpacity 
+        <Pressable style={({ pressed }) => [
+          {
+            backgroundColor: pressed ? '#4DC591' : 'white',
+            elevation: 14, 
+            shadowColor: '#000', 
+            shadowOffset: { width: 0, height: 4 }, 
+            shadowOpacity: 0.2, 
+            shadowRadius: 4,
+            justifyContent: 'center', 
+            alignItems: 'center', 
+            padding: 16, 
+            borderRadius: 8, 
+            width: 96, 
+            height: 56, 
+            marginHorizontal: 'auto', 
+            marginVertical: 12,
+          }
+        ]}
           onPress={() => {
             router.push({
               pathname: '/[vocabId]',
@@ -22,14 +39,16 @@ const VocabItem = ({ data }) => {
             });
           }}
         >
-          <Text>
-            {item.hanzi}
-          </Text>
-        </TouchableOpacity>
+          {({ pressed }) => (
+            <Text style={{ color: pressed ? 'white' : 'black' }}>
+              {item.hanzi}
+            </Text>
+          )}
+        </Pressable>
       )}
-      numColumns={5}
+      numColumns={3}
       keyExtractor={(item) => item.id}
-      estimatedItemSize={200}
+      estimatedItemSize={115}
     />
   )
 }
