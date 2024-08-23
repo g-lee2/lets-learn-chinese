@@ -17,6 +17,7 @@ export default function App() {
               &#9432;</Text>
             </TouchableOpacity>
           ),
+          headerTitleAlign: 'center',
         }}
       />
     </Stack>

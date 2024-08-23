@@ -20,6 +20,7 @@ const VocabDetails = () => {
           headerTitleStyle: {
             color: 'black',
           },
+          headerTitleAlign: 'center',
         }}
       />
       <View className='flex justify-center items-center mb-4'>

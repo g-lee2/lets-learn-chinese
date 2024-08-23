@@ -13,6 +13,7 @@ const hskOne = () => {
           headerTitleStyle: {
             color: 'black',
           },
+          headerTitleAlign: 'center',
         }}
       />
       <VocabItem data={data} />

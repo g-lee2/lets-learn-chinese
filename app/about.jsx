@@ -32,6 +32,7 @@ const about = () => {
             headerTitleStyle: {
               color: 'black',
             },
+            headerTitleAlign: 'center',
           }}
         />
         <View>
