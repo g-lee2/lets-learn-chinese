@@ -13,7 +13,6 @@
 - [For Android (using Android Studio) Installation/Setup](#for-android-using-android-studio)
 - [General Setup/Installation Requirements](#setupinstallation-requirements)
 - [Credit](#credit)
-- [Contributing](#contributing)
 
 #### Description of Application
 
