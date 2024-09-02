@@ -10,8 +10,6 @@ const RootLayout = () => {
   const [streakData, setStreakData] = useState([]);
   const [shouldSaveNewStreak, setShouldSaveNewStreak] = useState(false);
 
-  console.log(streakData);
-
   const options = {
     year: 'numeric',
     month: 'long',
