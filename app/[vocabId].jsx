@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, FlatList } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList, Dimensions } from 'react-native';
 import { useState } from 'react';
 import { useLocalSearchParams, Stack } from 'expo-router';
 import WritingBoard from '../components/WritingBoard';
@@ -6,6 +6,9 @@ import WritingBoard from '../components/WritingBoard';
 const VocabDetails = () => {
   const {vocabId, vocabHanzi, vocabPinyin, vocabTranslations} = useLocalSearchParams();
   const vocabTranslationsArray = vocabTranslations.split(",");
+
+  const { height } = Dimensions.get('window'); 
+  const isSmallerDevice = height <= 667;
   
   const [hideTranslations, setHideTranslations] = useState(false);
   const [hideHanzi, setHideHanzi] = useState(false);
@@ -36,7 +39,7 @@ const VocabDetails = () => {
         <TouchableOpacity onPress={() => setHidePinyin(prev => !prev)}className='bg-white rounded-lg border-2 border-customPastelGreen w-11/12 items-center'>
           <Text className='p-3'>{hidePinyin ? 'Show' : 'Hide'} Pinyin</Text>
         </TouchableOpacity>
-        <View className='my-1 h-20 justify-center items-center'>
+        <View className={`my-1 ${isSmallerDevice ? 'h-14' : 'h-20'} justify-center items-center`}>
           <FlatList
             data={vocabTranslationsArray}
             renderItem={({item}) => <Text className='px-4'>{hideTranslations ? '' : `-${item}`}</Text>}
@@ -48,7 +51,7 @@ const VocabDetails = () => {
           <Text className='p-3'>{hideTranslations ? 'Show' : 'Hide'} Definition</Text>
         </TouchableOpacity>
       </View>
-      <WritingBoard character={hideHanzi ? '' : vocabHanzi} />
+      <WritingBoard character={hideHanzi ? '' : vocabHanzi} isSmallerDevice={isSmallerDevice} />
     </View>
   )
 }

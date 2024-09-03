@@ -1,14 +1,11 @@
 import { useState } from 'react';
-import { View, Text, TouchableOpacity, Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { Svg, Path, Line, Text as SvgText } from 'react-native-svg';
 
-const WritingBoard = ({character}) => {
+const WritingBoard = ({character, isSmallerDevice}) => {
   const [paths, setPaths] = useState([]);
   const [currentPath, setCurrentPath] = useState([]);
   const [isClearButtonClicked, setIsClearButtonClicked] = useState(false);
-
-  const { height } = Dimensions.get('window'); 
-  const isSmallerDevice = height <= 667;
 
   const onTouchEnd = () => {
     if (currentPath.length > 0) {
