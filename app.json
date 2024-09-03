@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "lets-learn-chinese",
+    "name": "Mandarin Mate",
     "scheme": "lets-learn-chinese",
     "slug": "lets-learn-chinese",
     "version": "1.0.0",
@@ -8,13 +8,7 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/foreground.png",
-        "backgroundImage": "./assets/background.png"
-      }
+      "supportsTablet": false
     },
     "plugins": [
       "expo-router"

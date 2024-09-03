@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { Svg, Path, Line, Text as SvgText } from 'react-native-svg';
 
-const WritingBoard = ({character}) => {
+const WritingBoard = ({character, isSmallerDevice}) => {
   const [paths, setPaths] = useState([]);
   const [currentPath, setCurrentPath] = useState([]);
   const [isClearButtonClicked, setIsClearButtonClicked] = useState(false);
@@ -45,7 +45,7 @@ const WritingBoard = ({character}) => {
 
   return (
     <View className='flex justify-center items-center'>
-      <View onTouchMove={onTouchMove} onTouchEnd={onTouchEnd} className='w-11/12 h-64 border-2 border-customGreen rounded-2xl'>
+      <View onTouchMove={onTouchMove} onTouchEnd={onTouchEnd} className={`w-11/12 ${isSmallerDevice ? 'h-56' : 'h-64'} border-2 border-customGreen rounded-2xl`}>
         <Svg>
           <Line
             x1="25%"
@@ -110,7 +110,7 @@ const WritingBoard = ({character}) => {
           <SvgText
             x="50%"
             y="50%"
-            fontSize={character.length > 2 ? '90' : '150'}
+            fontSize={character.length > 3 ? '85' : character.length === 3 ? '110' : '150'}
             fill="gray"
             textAnchor="middle"
             alignmentBaseline="central"
